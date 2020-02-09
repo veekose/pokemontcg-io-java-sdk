@@ -1,13 +1,20 @@
 package io.pokemontcg.model;
 
-public enum SuperType {
-    ENERGY("Energy"),
-    POKEMON("Pokémon"),
-    TRAINER("Trainer");
+import com.squareup.moshi.Json;
+
+public enum SuperType  {
+    @Json(name = "Energy") ENERGY("Energy"),
+    @Json(name = "Pok\u00E9mon") POKEMON("Pok\u00E9mon"),
+    @Json(name = "Trainer") TRAINER("Trainer");
 
     private String displayName;
 
     SuperType(String displayName) {
         this.displayName = displayName;
+    }
+
+    @Override
+    public String toString() {
+        return displayName;
     }
 }

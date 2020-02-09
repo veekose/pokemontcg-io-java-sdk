@@ -3,16 +3,27 @@ package io.pokemontcg.model;
 import com.squareup.moshi.Json;
 
 public enum Type {
-    @Json(name = "Colorless") COLORLESS,
-    @Json(name = "Darkness") DARKNESS,
-    @Json(name = "Dragon") DRAGON,
-    @Json(name = "Fairy") FAIRY,
-    @Json(name = "Fighting") FIGHTING,
-    @Json(name = "Fire") FIRE,
-    @Json(name = "Grass") GRASS,
-    @Json(name = "Lightning") LIGHTNING,
-    @Json(name = "Metal") METAL,
-    @Json(name = "Psychic") PSYCHIC,
-    @Json(name = "Water") WATER,
-    @Json(name = "Free") FREE;
+    @Json(name = "Colorless") COLORLESS("Colorless"),
+    @Json(name = "Darkness") DARKNESS("Darkness"),
+    @Json(name = "Dragon") DRAGON("Dragon"),
+    @Json(name = "Fairy") FAIRY("Fairy"),
+    @Json(name = "Fighting") FIGHTING("Fighting"),
+    @Json(name = "Fire") FIRE("Fire"),
+    @Json(name = "Grass") GRASS("Grass"),
+    @Json(name = "Lightning") LIGHTNING("Lightning"),
+    @Json(name = "Metal") METAL("Metal"),
+    @Json(name = "Psychic") PSYCHIC("Psychic"),
+    @Json(name = "Water") WATER("Water"),
+    @Json(name = "Free") FREE("Free");
+
+    private String displayName;
+
+    Type(String displayName) {
+        this.displayName = displayName;
+    }
+
+    @Override
+    public String toString() {
+        return displayName;
+    }
 }
