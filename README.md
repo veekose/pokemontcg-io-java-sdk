@@ -14,9 +14,9 @@ cards.get().getCards();
 //Calling the all() method will execute the api request
 ```
 
-#####Query Support
+##### Query Support
 
-You can and query filters via two different where() methods:
+You can add query filters via two different where() methods:
 * Use the CardSearchParameter enum
     * where(CardSearchParameter.PARAMETER_NAME, "filterValue")
 * Manually build your own query string
@@ -33,7 +33,7 @@ cards.get().getCards();
 //URL built - https://api.pokemontcg.io/v1/cards?types=water&rarity=rare
 ```
 
-#####Find a single card by id:
+##### Find a single card by id:
 
 ```java
 Optional<Cards> card = PokemonTcg.cards().find("xy7-54");
@@ -53,9 +53,9 @@ sets.get().getSets();
 //Calling the all() method will execute the api request
 ```
 
-#####Query Support
+##### Query Support
 
-You can and query filters via two different where() methods:
+You can add query filters via two different where() methods:
 * Use the CardSearchParameter enum
     * where(CardSearchParameter.PARAMETER_NAME, "filterValue")
 * Manually build your own query string
@@ -75,7 +75,7 @@ Optional<List<Set>> sets = PokemonTcg.sets()
 //URL built - https://api.pokemontcg.io/v1/sets?standardLegal=false
 ```
 
-#####Find a single set by code
+##### Find a single set by code
 
 ```java
 Optional<Sets> set = PokemonTcg.sets().find("xy1")
@@ -102,7 +102,7 @@ superTypes.get().getSuperTypes();
 //Calling the all() method will execute the api request
 ```
 
-###Additional Query Capabilities
+### Additional Query Capabilities
 There is a set of operators you can use to make your queries broader
 * gt, gte, lt, lte --- greater than, greater than or equal to, less than, less than or equal to
 * | and , --- or, and (Can only be used on fields that accept multiple values)
@@ -121,7 +121,7 @@ Optional<Cards> cards = PokemonTcg.cards()
 //URL built - https://api.pokemontcg.io/v1/cards?types=water|fire|dragon
 ```
 
-###Header Information
+### Header Information
 There are values in the response headers that can be retrieved (if available) via accessors in each response object.
 
 * **Count**: The number of elements returned
@@ -153,7 +153,7 @@ Optional<Cards> cards = PokemonTcg.cards()
 //URL built - https://api.pokemontcg.io/v1/cards?page=3&pageSize=50
 ```
 
-###Important Notes
+### Important Notes
 
 * A minimum Java version of 8 is required to use this SDK.
 * The find("id"), where(enum, "value"), and where("value") functions all implement null validations on their parameters using Objects.requireNonNull(). A NullPointerError will be thrown if validation fails.
