@@ -18,7 +18,9 @@ public enum SubType {
     LEGEND("LEGEND"),
     BREAK("BREAK"),
     ROCKETS_SECRET_MACHINE("Rocket's Secret Machine"),
-    TAG_TEAM("TAG TEAM");
+    TAG_TEAM("TAG TEAM"),
+    V("V"),
+    VMAX("VMAX");
 
     private String displayName;
 
