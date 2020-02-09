@@ -16,16 +16,12 @@ cards.get().getCards();
 
 ##### Query Support
 
-You can add query filters via two different where() methods:
-* Use the CardSearchParameter enum
-    * where(CardSearchParameter.PARAMETER_NAME, "filterValue")
-* Manually build your own query string
-    * where("parameter1=value&parameter2=value")
+You can add query filters via the where() method
 
 ```java
 Optional<Cards> cards = PokemonTcg.cards()
     .where(CardSearchParameters.TYPES, "water")
-    .where("rarity=rare")
+    .where(CardSearchParameters.RARITY, "rare")
     .all();
 
 cards.get().getCards();
@@ -55,24 +51,14 @@ sets.get().getSets();
 
 ##### Query Support
 
-You can add query filters via two different where() methods:
-* Use the CardSearchParameter enum
-    * where(CardSearchParameter.PARAMETER_NAME, "filterValue")
-* Manually build your own query string
-    * where("parameter1=value&parameter2=value")
+You can add query filters via the where() method
 
 ```java
 Optional<Sets> sets = PokemonTcg.sets()
-    where(SetSearchParameters.NAME, "Cosmic Eclipse")
+    .where(SetSearchParameters.NAME, "Cosmic Eclipse")
     .all();
 
 //URL built - https://api.pokemontcg.io/v1/sets?name=Cosmic%20Eclipse
-
-Optional<List<Set>> sets = PokemonTcg.sets()
-    where("standardLegal=false")
-    .all();
-
-//URL built - https://api.pokemontcg.io/v1/sets?standardLegal=false
 ```
 
 ##### Find a single set by code

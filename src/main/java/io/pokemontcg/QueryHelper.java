@@ -1,12 +1,12 @@
 package io.pokemontcg;
 
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,19 +25,17 @@ class QueryHelper {
     }
 
     private static Response runQuery(String endpointName, HashMap<String, String> parameters, String id) throws IOException {
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(pokemonTcgIoUrl + endpointName).newBuilder();
         OkHttpClient okHttpClient = new OkHttpClient();
-        String url = pokemonTcgIoUrl + endpointName + "/";
-        String queryString = "";
-        String responseBody = null;
-        Response response = null;
+        Response response;
 
         if (id != null && !id.isEmpty()) {
-            queryString = id;
+            urlBuilder.addPathSegment(id);
         } else if (parameters != null && !parameters.isEmpty()) {
-            queryString = buildQueryString(parameters);
+            parameters.forEach(urlBuilder::addQueryParameter);
         }
 
-        url += queryString;
+        String url = urlBuilder.build().toString();
         Request request = new Request.Builder().url(url).build();
 
         try {
@@ -49,28 +47,5 @@ class QueryHelper {
         }
 
         return response;
-    }
-
-    private static String buildQueryString(HashMap<String, String> parameters) {
-        StringBuilder sb = new StringBuilder();
-        String delimiter = "";
-
-        sb.append("?");
-        for (Map.Entry<String, String> e : parameters.entrySet()) {
-            sb.append(delimiter);
-
-            if (e.getValue() != null && !e.getValue().isEmpty()) {
-                if (e.getKey() != null && !e.getKey().isEmpty()) {
-                    sb.append(e.getKey()).append("=");
-                }
-                sb.append(e.getValue());
-
-                if (delimiter.isEmpty()) {
-                    delimiter = "&";
-                }
-            }
-        }
-
-        return sb.toString();
     }
 }

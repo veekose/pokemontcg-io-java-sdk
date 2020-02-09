@@ -3,7 +3,6 @@ package io.pokemontcg;
 import io.pokemontcg.model.*;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -71,13 +70,6 @@ public class PokemonTcg {
         }
 
         @Override
-        public CardsBuilder where(String value) {
-            Objects.requireNonNull(value);
-            getQueryParameters().put("", value);
-            return this;
-        }
-
-        @Override
         public void clearSearchParameters() {
             getQueryParameters().clear();
         }
@@ -111,13 +103,6 @@ public class PokemonTcg {
             Objects.requireNonNull(parameter);
             Objects.requireNonNull(value);
             getQueryParameters().put(parameter.toString(), value);
-            return this;
-        }
-
-        @Override
-        public SetsBuilder where(String value) {
-            Objects.requireNonNull(value);
-            getQueryParameters().put("", value);
             return this;
         }
 

@@ -1,7 +1,6 @@
 package io.pokemontcg;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -10,10 +9,5 @@ import java.util.Optional;
  * @param <T> The type of {@link io.pokemontcg.model} to be stored in the {@code List}
  */
 interface Searchable<T> {
-    /**
-     *
-     * @return fdsafdsa
-     * @throws IOException fdsafdsa
-     */
     Optional<T> all() throws IOException;
 }
