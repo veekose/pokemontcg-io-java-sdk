@@ -2,23 +2,23 @@ package io.pokemontcg.model;
 
 public class AbstractModel {
     private String links;
-    private String pageSize;
-    private String count;
-    private String totalCount;
+    private int pageSize;
+    private int count;
+    private int totalCount;
     private String rateLimit;
     private String rateLimitRemaining;
 
     public String getLinks() { return links; }
     public void setLinks(String links) { this.links = links; }
 
-    public String getPageSize() { return pageSize; }
-    public void setPageSize(String pageSize) { this.pageSize = pageSize; }
+    public int getPageSize() { return pageSize; }
+    public void setPageSize(int pageSize) { this.pageSize = pageSize; }
 
-    public String getCount() { return count; }
-    public void setCount(String count) { this.count = count; }
+    public int getCount() { return count; }
+    public void setCount(int count) { this.count = count; }
 
-    public String getTotalCount() { return totalCount; }
-    public void setTotalCount(String totalCount) { this.totalCount = totalCount; }
+    public int getTotalCount() { return totalCount; }
+    public void setTotalCount(int totalCount) { this.totalCount = totalCount; }
 
     public String getRateLimit() { return rateLimit; }
     public void setRateLimit(String rateLimit) { this.rateLimit = rateLimit; }
