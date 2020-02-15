@@ -51,10 +51,10 @@ abstract class AbstractBuilder {
                 T model = jsonAdapter.fromJson(responseBody);
                 if (model != null) {
                     Headers headers = response.headers();
-                    model.setCount(headers.get("count"));
-                    model.setTotalCount(headers.get("total-count"));
+                    model.setCount((headers.get("count") != null && !headers.get("count").isEmpty()) ? Integer.parseInt(headers.get("count")) : 0);
+                    model.setTotalCount((headers.get("total-count") != null && !headers.get("total-count").isEmpty()) ? Integer.parseInt(headers.get("total-count")) : 0);
                     model.setLinks(headers.get("link"));
-                    model.setPageSize(headers.get("page-size"));
+                    model.setPageSize((headers.get("page-size") != null && !headers.get("page-size").isEmpty()) ? Integer.parseInt(headers.get("page-size")) : 0);
                     model.setRateLimit(headers.get("ratelimit-limit"));
                     model.setRateLimitRemaining(headers.get("ratelimit-remaining"));
                 }

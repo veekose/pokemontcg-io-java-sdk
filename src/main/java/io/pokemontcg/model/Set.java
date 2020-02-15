@@ -6,8 +6,8 @@ public class Set {
     private String name;
     private String series;
     private int totalCards;
-    private Boolean standardLegal;
-    private Boolean expandedLegal;
+    private boolean standardLegal;
+    private boolean expandedLegal;
     private String releaseDate;
     private String symbolUrl;
     private String logoUrl;
@@ -28,10 +28,10 @@ public class Set {
     public int getTotalCards() { return totalCards; }
     public void setTotalCards(int totalCards) { this.totalCards = totalCards; }
 
-    public Boolean getStandardLegal() { return standardLegal; }
+    public boolean getStandardLegal() { return standardLegal; }
     public void setStandardLegal(Boolean standardLegal) { this.standardLegal = standardLegal; }
 
-    public Boolean getExpandedLegal() { return expandedLegal; }
+    public boolean getExpandedLegal() { return expandedLegal; }
     public void setExpandedLegal(Boolean expandedLegal) { this.expandedLegal = expandedLegal; }
 
     public String getReleaseDate() { return releaseDate; }
