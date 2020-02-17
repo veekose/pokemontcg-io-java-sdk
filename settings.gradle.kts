@@ -1,2 +1,2 @@
-rootProject.name = "io.pokemontcg.pokemontcgsdk"
+rootProject.name = "pokemontcg-io-java-sdk"
 
