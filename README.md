@@ -1,6 +1,25 @@
-# Pokémon TCG Java SDK
+# Pokémon TCG Java SDK [![pokemontcg-developers on discord](https://img.shields.io/badge/discord-pokemontcg--developers-738bd7.svg)](https://discord.gg/dpsTCvg)
 
 This is the Pokémon TCG SDK Java implementation. It is a wrapper around the Pokémon TCG API of [pokemontcg.io](http://pokemontcg.io)
+
+## Installation [ ![Download](https://api.bintray.com/packages/vkos/pokemontcg-io-java-sdk/pokemontcg-io-java-sdk/images/download.svg) ](https://bintray.com/vkos/pokemontcg-io-java-sdk/pokemontcg-io-java-sdk/_latestVersion)
+
+Gradle
+
+```groovy
+implementation 'io.pokemontcg:pokemontcg-io-java-sdk:{versionNumber}'
+```
+
+Maven
+
+```xml
+<dependency>
+  <groupId>io.pokemontcg</groupId>
+  <artifactId>pokemontcg-io-java-sdk</artifactId>
+  <version>{versionNumber}</version>
+  <type>pom</type>
+</dependency>
+```
 
 ## Usage
 
