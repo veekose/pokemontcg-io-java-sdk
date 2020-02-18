@@ -30,7 +30,7 @@ java {
 }
 
 group = "io.pokemontcg"
-version = "1.1.1"
+version = "1.1.2"
 
 val publicationName = "pokemontcg-io-java-sdk"
 
@@ -96,8 +96,7 @@ bintray {
     user = project.findProperty("bintrayUser").toString()
     key = project.findProperty("bintrayKey").toString()
     setPublications(publicationName)
-    dryRun = true
-    publish = false
+    publish = true
 
     pkg.apply {
         repo = publicationName
